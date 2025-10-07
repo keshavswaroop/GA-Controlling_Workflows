@@ -1,0 +1,14 @@
+name: Reusable Deploy Code
+on: workflow_call
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Build Artifacts
+              uses: actions/download-artifact@v4
+              with:
+                  name: dist-files
+            - name: Output Contents
+              run: ls
+            - name: Deploy
+              run: echo "Deploying...."
