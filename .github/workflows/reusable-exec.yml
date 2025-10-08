@@ -74,6 +74,8 @@ jobs:
     uses:
       ./.github/workflows/deploy.yml
       # uses: D:/Github Actions/Controlling Execution Flow/.github/workflows/deploy.yml
+    with:
+      artifact-name: dist-files
 
   report:
     needs: [lint, deploy]
