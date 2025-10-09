@@ -86,3 +86,10 @@ jobs:
         run: |
           echo "Something went wrong, Generating report"
           echo "${{toJson( github)}}"
+
+  print-deploy-output:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the output
+        run: echo "${{needs.deploy.outputs.result}}"
